@@ -2,3 +2,6 @@
 infra/.terraform/
 infra/*.tfstate
 infra/*.tfstate.*
+
+# macOS
+.DS_Store

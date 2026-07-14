@@ -1,25 +1,160 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Snap Motorsports</title>
-    <style>
-      body {
-        font-family: system-ui, sans-serif;
-        margin: 0;
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
-        background: #0f172a;
-        color: #f8fafc;
-      }
-    </style>
-  </head>
-  <body>
-    <main>
-      <h1>Snap Motorsports</h1>
-      <p>Website coming soon.</p>
-    </main>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Snap Motorsports — Coming Soon</title>
+        <link
+            rel="stylesheet"
+            href="_ds/snap-motorsports-design-system-e003c371-89ca-4bf8-a826-1d4bbe135d80/tokens/colors.css"
+        />
+        <link
+            rel="stylesheet"
+            href="_ds/snap-motorsports-design-system-e003c371-89ca-4bf8-a826-1d4bbe135d80/tokens/typography.css"
+        />
+        <link
+            rel="stylesheet"
+            href="_ds/snap-motorsports-design-system-e003c371-89ca-4bf8-a826-1d4bbe135d80/tokens/spacing.css"
+        />
+        <style>
+            * {
+                margin: 0;
+                box-sizing: border-box;
+            }
+            html,
+            body {
+                height: 100%;
+            }
+            body {
+                font-family: var(--font-body);
+                color: var(--text-on-dark);
+                background: var(--snap-ink-950);
+            }
+            a {
+                color: var(--snap-white);
+                text-decoration: none;
+            }
+            a:hover {
+                color: var(--snap-blue-300);
+            }
+
+            .page {
+                position: relative;
+                min-height: 100vh;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding: clamp(24px, 5vw, 96px) clamp(24px, 5vw, 96px)
+                    clamp(24px, 5vw, 96px);
+                padding-top: clamp(24px, 5vw, 72px);
+            }
+            .photo-bg {
+                position: absolute;
+                inset: 0;
+                background: url("assets/mini-meppen-track.jpeg") center 30% /
+                    cover no-repeat;
+            }
+            .scrim {
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(
+                    to top,
+                    oklch(16% 0.006 231 / 0.94) 0%,
+                    oklch(16% 0.006 231 / 0.55) 45%,
+                    oklch(16% 0.006 231 / 0.25) 100%
+                );
+            }
+            .logo {
+                position: relative;
+                align-self: flex-start;
+                width: clamp(140px, 16vw, 220px);
+                margin-bottom: clamp(32px, 6vh, 64px);
+            }
+            .content {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                gap: clamp(16px, 2.5vw, 28px);
+                margin-top: auto;
+                margin-bottom: clamp(48px, 7vw, 72px);
+            }
+            .eyebrow {
+                font-family: var(--font-label);
+                font-style: italic;
+                font-weight: 700;
+                font-size: clamp(13px, 1.1vw, 15px);
+                letter-spacing: var(--tracking-eyebrow);
+                text-transform: uppercase;
+                color: var(--snap-blue-300);
+            }
+            h1 {
+                font-family: var(--font-display);
+                font-weight: 900;
+                font-size: clamp(40px, 5.5vw, 80px);
+                line-height: var(--leading-display);
+                letter-spacing: var(--tracking-display);
+                text-transform: uppercase;
+                color: var(--snap-white);
+                max-width: 22ch;
+            }
+            .blurb {
+                font-size: clamp(16px, 1.3vw, 18px);
+                line-height: var(--leading-body);
+                color: var(--text-on-dark-secondary);
+                max-width: 52ch;
+            }
+            .contact-line {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                font-family: var(--font-mono);
+                font-size: 15px;
+            }
+            .tick {
+                width: 28px;
+                height: 2px;
+                background: var(--snap-blue-500);
+            }
+            footer {
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 16px;
+                flex-wrap: wrap;
+                border-top: 1px solid oklch(100% 0 0 / 0.18);
+                padding-top: 20px;
+            }
+            footer span {
+                font-family: var(--font-mono);
+                font-size: 13px;
+                color: var(--snap-ink-400);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page">
+            <div class="photo-bg"></div>
+            <div class="scrim"></div>
+            <img
+                class="logo"
+                src="assets/snap-logo-mark.svg"
+                alt="Snap Motorsports"
+            />
+            <div class="content">
+                <div class="eyebrow">Official site — coming soon</div>
+                <h1>Precision suspension hardware.</h1>
+                <div class="contact-line">
+                    <span class="tick"></span>
+                    <a href="mailto:info@snapmotorsports.com"
+                        >info@snapmotorsports.com</a
+                    >
+                </div>
+            </div>
+            <footer>
+                <span>SNAP MOTORSPORTS — SITE UNDER CONSTRUCTION</span>
+            </footer>
+        </div>
+    </body>
 </html>

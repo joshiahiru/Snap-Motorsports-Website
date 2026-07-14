@@ -1,0 +1,57 @@
+/* ==========================================================================
+   SNAP MOTORSPORTS — SPACING, RADIUS, SHADOW, MOTION TOKENS
+   Not specified in the Style Guide — derived to fit an industrial,
+   precision-parts brand: tight/mechanical spacing, mostly square corners,
+   flat or hard-edged shadows (no soft glows), quick/no-nonsense motion.
+   ========================================================================== */
+
+:root {
+  /* ---- Spacing scale (4px base) ------------------------------------------ */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* ---- Radius — brand shapes are square/angular; radius is used sparingly,
+     mainly on interactive controls, never on the logo plate or hero panels -- */
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-pill: 999px;
+
+  /* ---- Borders ------------------------------------------------------------ */
+  --border-width-hairline: 1px;
+  --border-width-default: 1px;
+  --border-width-thick: 2px;
+
+  /* ---- Shadows — hard, low-blur, low-opacity. No ambient/glow shadows;
+     this is a parts catalog, not a soft consumer app. -------------------- */
+  --shadow-sm: 0 1px 0 rgba(9, 20, 28, 0.08);
+  --shadow-md: 0 2px 4px rgba(9, 20, 28, 0.12);
+  --shadow-lg: 0 8px 16px rgba(9, 20, 28, 0.16);
+  --shadow-focus: 0 0 0 3px var(--focus-ring);
+  --shadow-inset: inset 0 1px 2px rgba(9, 20, 28, 0.15);
+
+  /* ---- Motion — fast and mechanical: linear or sharp ease, no bounce ---- */
+  --duration-instant: 80ms; /* @kind other */
+  --duration-fast: 120ms; /* @kind other */
+  --duration-base: 180ms; /* @kind other */
+  --duration-slow: 280ms; /* @kind other */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1); /* @kind other */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); /* @kind other */
+  --ease-linear: linear; /* @kind other */
+
+  /* ---- Layout ------------------------------------------------------------- */
+  --container-max: 1280px;
+  --grid-gap: var(--space-6);
+}

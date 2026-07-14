@@ -1,0 +1,107 @@
+/* ==========================================================================
+   SNAP MOTORSPORTS — TYPE TOKENS
+
+   Brand font (per Style Guide.docx): Bicyclette Black (logo main) /
+   Bicyclette Oblique (logo sub) — real font files were supplied and are
+   self-hosted below (Thin/Light/Regular/Italic/Bold/Black/Ultra). No more
+   substitution — Archivo Black / Barlow are dropped in favor of the real
+   family.
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Bicyclette';
+  src: url('../assets/fonts/Bicyclette-Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bicyclette';
+  src: url('../assets/fonts/Bicyclette-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bicyclette';
+  src: url('../assets/fonts/Bicyclette-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bicyclette';
+  src: url('../assets/fonts/Bicyclette-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bicyclette';
+  src: url('../assets/fonts/Bicyclette-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bicyclette';
+  src: url('../assets/fonts/Bicyclette-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bicyclette Ultra';
+  src: url('../assets/fonts/Bicyclette-Ultra.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* IBM Plex Mono — self-hosted from an uploaded file. */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('../assets/fonts/IBMPlexMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ---- Font families ---------------------------------------------------- */
+  --font-display: 'Bicyclette Ultra', 'Bicyclette', 'Arial Black', sans-serif;
+  --font-label:   'Bicyclette', 'Helvetica Neue', sans-serif;
+  --font-body:    'Bicyclette', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono:    'IBM Plex Mono', 'SF Mono', Consolas, monospace;
+
+  /* ---- Scale (px) — condensed/display faces need slightly tighter
+     line-heights than body text -------------------------------------------- */
+  --text-display-xl: 76px;
+  --text-display-lg: 56px;
+  --text-display-md: 40px;
+  --text-display-sm: 30px;
+  --text-heading-lg: 26px;
+  --text-heading-md: 22px;
+  --text-heading-sm: 18px;
+  --text-body-lg:    18px;
+  --text-body-md:    16px;
+  --text-body-sm:    14px;
+  --text-label-lg:   15px;
+  --text-label-md:   13px;
+  --text-caption:    12px;
+
+  --leading-display: 1.02;
+  --leading-heading: 1.15;
+  --leading-body:    1.55;
+  --leading-label:   1.2;
+
+  --tracking-display: -0.01em;
+  --tracking-label-caps: 0.06em;
+  --tracking-eyebrow: 0.14em;
+
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-black: 900;
+}
