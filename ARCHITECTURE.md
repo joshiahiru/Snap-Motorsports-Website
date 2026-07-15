@@ -53,13 +53,15 @@ CloudFront only accepts ACM certificates from the `us-east-1` region. This is an
 
 ## Naming and tagging
 
-All named resources use the `snap-motorsports` prefix. Every resource is tagged via Terraform provider `default_tags`:
+All named resources use the `snap-motorsports` prefix. Every taggable resource carries three default tags (set in `versions.tf`):
 
 | Tag | Value |
 |---|---|
-| Project | snap-motorsports |
-| Environment | prod |
-| ManagedBy | terraform |
+| `App` | `Snap Motorsports Website` |
+| `Environment` | `prod` (from `var.env`) |
+| `ManagedBy` | `Terraform` |
+
+`resource-groups.tf` defines a single account-scoped group named `snap-motorsports` that matches all resources with `App = Snap Motorsports Website`. View it in **AWS Console → Resource Groups → snap-motorsports**.
 
 ## Terraform layout
 
@@ -72,6 +74,7 @@ infra/
 ├── s3.tf            # Private bucket and OAC bucket policy
 ├── cloudfront.tf    # CDN distribution, OAC, error responses
 ├── iam.tf           # GitHub OIDC provider and deploy role
+├── resource-groups.tf # Tag-based AWS Resource Group
 └── outputs.tf       # Nameservers, CloudFront URL, bucket name, role ARN
 ```
 
@@ -104,7 +107,7 @@ After registrar NS delegation propagates:
 
 ```bash
 cd infra
-terraform apply -var="enable_custom_domain=true"
+terraform apply -var-file=envs/prod.tfvars
 ```
 
 This will:
@@ -113,6 +116,20 @@ This will:
 2. Attach `snapmotorsports.com` and `www.snapmotorsports.com` as CloudFront aliases
 3. Switch CloudFront to the ACM certificate
 4. Create Route 53 A/AAAA alias records for apex and www
+
+Steady-state applies should always use `-var-file=envs/prod.tfvars` so custom domain settings are not accidentally reverted.
+
+## Resource grouping
+
+AWS is deprecating the **myApplications** console. Snap Motorsports Website groups infrastructure via a tag-based **AWS Resource Group** named `snap-motorsports` (see `resource-groups.tf`).
+
+View all infrastructure: **AWS Console → Resource Groups → snap-motorsports**
+
+Or from the CLI:
+
+```bash
+terraform -chdir=infra output -raw resource_group_arn
+```
 
 ## CI/CD pipeline
 

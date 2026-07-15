@@ -52,16 +52,16 @@ All AWS resources are defined in Terraform under `infra/`. See [ARCHITECTURE.md]
 ```bash
 cd infra
 terraform init
-terraform apply
+terraform apply -var-file=envs/prod.tfvars
 ```
 
 ### Enable custom domain (after DNS delegation)
 
-After updating your domain registrar's nameservers to the Route 53 values from `terraform output route53_nameservers`, run:
+After updating your domain registrar's nameservers to the Route 53 values from `terraform output route53_nameservers`, apply with custom domain enabled:
 
 ```bash
 cd infra
-terraform apply -var="enable_custom_domain=true"
+terraform apply -var-file=envs/prod.tfvars
 ```
 
 This validates the ACM certificate, attaches `snapmotorsports.com` and `www.snapmotorsports.com` to CloudFront, and creates the DNS alias records.

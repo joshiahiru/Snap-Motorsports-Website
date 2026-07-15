@@ -16,6 +16,17 @@ variable "aws_region" {
   default     = "eu-central-1"
 }
 
+variable "env" {
+  description = "Deployment environment (e.g. dev, prod)."
+  type        = string
+  default     = "prod"
+
+  validation {
+    condition     = can(regex("^[a-z0-9-]+$", var.env))
+    error_message = "env must contain only lowercase letters, digits and hyphens."
+  }
+}
+
 variable "project_prefix" {
   description = "Prefix used for named AWS resources."
   type        = string

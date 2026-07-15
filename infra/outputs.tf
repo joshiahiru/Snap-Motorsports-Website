@@ -27,3 +27,9 @@ output "acm_certificate_status" {
   description = "ACM certificate status (ISSUED after registrar NS delegation)."
   value       = aws_acm_certificate.site.status
 }
+
+# Tag-based Resource Group (replaces deprecated myApplications console).
+output "resource_group_arn" {
+  description = "ARN of the snap-motorsports Resource Group (empty outside prod env)."
+  value       = length(aws_resourcegroups_group.snap_motorsports) > 0 ? aws_resourcegroups_group.snap_motorsports[0].arn : ""
+}

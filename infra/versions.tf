@@ -10,14 +10,18 @@ terraform {
 }
 
 # Primary region for regional resources (S3 bucket).
+#
+# default_tags applies to every resource type the AWS provider supports
+# tagging on (S3, CloudFront, Route 53, IAM, ...) automatically, so no
+# individual resource block needs its own `tags = {}`.
 provider "aws" {
   region = var.aws_region
 
   default_tags {
     tags = {
-      Project     = "snap-motorsports"
-      Environment = "prod"
-      ManagedBy   = "terraform"
+      App         = "Snap Motorsports Website"
+      Environment = var.env
+      ManagedBy   = "Terraform"
     }
   }
 }
@@ -29,9 +33,9 @@ provider "aws" {
 
   default_tags {
     tags = {
-      Project     = "snap-motorsports"
-      Environment = "prod"
-      ManagedBy   = "terraform"
+      App         = "Snap Motorsports Website"
+      Environment = var.env
+      ManagedBy   = "Terraform"
     }
   }
 }
